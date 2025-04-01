@@ -7,9 +7,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white px-6 py-4 flex justify-between items-center md:px-8">
-      <h1 className="font-semibold font-mono text-3xl md:text-4xl text-white">
-        Nikhil<span className="font-bold text-green-500 text-4xl">.</span>
+    <nav className="bg-black text-white px-10 py-8 flex justify-between items-center md:px-16">
+      <h1 className="font-semibold font-mono pl-40 text-4xl md:text-5xl text-white">
+        Nikhil<span className="font-bold text-green-500 text-6xl">.</span>
       </h1>
 
       {/* Hamburger Menu Button */}
@@ -17,12 +17,12 @@ const Navbar = () => {
         className="md:hidden text-white focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
+        {isOpen ? <X size={40} /> : <Menu size={40} />}
       </button>
 
       {/* Nav Links */}
       <ul
-        className={`absolute left-0 top-16 w-full bg-black md:static md:flex md:items-center md:gap-6 md:p-0 md:w-auto transition-all duration-300 ease-in-out ${
+        className={`absolute left-0 top-24 w-full bg-black md:static md:flex md:items-center md:gap-8 md:p-0 md:w-auto transition-all duration-300 ease-in-out ${
           isOpen ? "block" : "hidden"
         } md:flex`}
       >
@@ -36,7 +36,7 @@ const Navbar = () => {
           <li key={item.path} className="text-center md:text-left">
             <Link
               to={item.path}
-              className={`block py-3 md:py-0 md:px-3 text-lg md:text-base ${
+              className={`block py-5 md:py-3 md:px-6 text-4xl md:text-xl font-semibold ${
                 location.pathname === item.path ? "text-green-400" : "text-white"
               } hover:text-green-400 transition duration-200`}
               onClick={() => setIsOpen(false)}
