@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
