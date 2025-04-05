@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white px-10 py-8 flex justify-between items-center md:px-16">
-      <h1 className="font-semibold font-mono pl-40 text-4xl md:text-5xl text-white">
+      <h1 className="font-semibold font-mono pl-41 text-4xl md:text-5xl text-white">
         Nikhil<span className="font-bold text-green-500 text-6xl">.</span>
       </h1>
 
