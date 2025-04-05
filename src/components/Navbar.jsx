@@ -3,47 +3,72 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const location = useLocation(); 
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/profile", label: "Profile" },
+    { path: "/project", label: "Project" },
+    { path: "/contact", label: "Contact" },
+  ];
+
   return (
-    <nav className="bg-black text-white px-10 py-8 flex justify-between items-center md:px-16">
-      <h1 className="font-semibold font-mono pl-41 text-4xl md:text-5xl text-white">
-        Nikhil<span className="font-bold text-green-500 text-6xl">.</span>
-      </h1>
+    <nav className="bg-black text-white shadow-md w-full">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4 py-4 md:px-10 lg:px-20 xl:px-28">
+        {/* Logo */}
+        <h1 className="font-semibold font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          Nikhil
+          <span className="font-bold text-green-500 text-3xl sm:text-4xl lg:text-5xl">.</span>
+        </h1>
 
-      <button
-        className="md:hidden text-white focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X size={40} /> : <Menu size={40} />}
-      </button>
+        {/* Hamburger Icon */}
+        <button
+          className="md:hidden text-white z-50"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
+        </button>
 
-      <ul
-        className={`absolute left-0 top-24 w-full bg-black md:static md:flex md:items-center md:gap-5 md:p-0 md:w-auto transition-all duration-300 ease-in-out ${
-          isOpen ? "block" : "hidden"
-        } md:flex`}
-      >
-        {[
-          { path: "/", label: "Home" },
-          { path: "/about", label: "About" },
-          { path: "/profile", label: "Profile" },
-          { path: "/project", label: "Project" },
-          { path: "/contact", label: "Contact" },
-        ].map((item) => (
-          <li key={item.path} className="text-center md:text-left">
-            <Link
-              to={item.path}
-              className={`block py-5 md:py-3 md:px-4 text-4xl md:text-xl font-semibold ${
-                location.pathname === item.path ? "text-green-400" : "text-white"
-              } hover:text-green-400 transition duration-200`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        {/* Mobile Menu */}
+        <ul
+          className={`fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center gap-8 text-2xl sm:text-3xl font-semibold transition-transform duration-300 ease-in-out ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } md:hidden`}
+        >
+          {navLinks.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                className={`${
+                  location.pathname === item.path ? "text-green-400" : "text-white"
+                } hover:text-green-400 transition duration-200`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-8">
+          {navLinks.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                className={`text-lg lg:text-xl xl:text-2xl font-medium ${
+                  location.pathname === item.path ? "text-green-400" : "text-white"
+                } hover:text-green-400 transition duration-200`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
