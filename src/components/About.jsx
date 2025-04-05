@@ -63,7 +63,7 @@ export default function Resume() {
     ),
     Skills: (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full bg-black p-6 rounded-lg">
-        {["ReactJS", "Node.js", "MongoDB", "Express.js", "TypeScript", "Redux", "C++", "OOPs", "DSA", "HTML", "CSS", "JavaScript", "Bootstrap", "Postman", "GraphQL", "Docker", "Kubernetes"].map((skill, index) => (
+        {["ReactJS", "Node.js", "MongoDB", "Express.js", "TypeScript", "Redux", "C++", "OOPs", "DSA", "HTML", "CSS", "JavaScript", "Bootstrap", "Postman"].map((skill, index) => (
           <div key={index} className="p-4 bg-gray-900 rounded-lg shadow-lg border border-gray-700 flex flex-col items-center">
             {skill === "ReactJS" && <FaReact size={30} className="text-blue-400" />}
             {skill === "Node.js" && <FaNodeJs size={30} className="text-green-500" />}
