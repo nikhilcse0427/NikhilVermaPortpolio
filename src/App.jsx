@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar'
-import {Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from './components/Home'
 import About from './components/About'
 import Profile from './components/Profile'
@@ -8,9 +8,9 @@ import Contact from './components/Contact'
 import './App.css'
 
 function App() {
-  
+
   return (
-    <>
+    <div className="min-h-screen w-full overflow-x-hidden">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,8 +19,7 @@ function App() {
         <Route path="project" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
-    </>
+    </div>
   )
 }
 

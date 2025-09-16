@@ -1,73 +1,199 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import DoctorAppointment from "./DoctorAppointment.png";
+
 const projects = [
+  {
+    name: "Road Safety Guard System",
+    description:
+      "A comprehensive road safety management system with real-time traffic monitoring, accident reporting, emergency response coordination, and safety analytics dashboard for traffic authorities.",
+    technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Socket.IO", "Mapbox API", "Tailwind CSS"],
+    link: "https://github.com/nikhilcse0427/road-safety-guard",
+    githubLink: "https://github.com/nikhilcse0427/road-safety-guard",
+    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    features: ["Real-time traffic monitoring", "Accident reporting system", "Emergency response", "Safety analytics", "Mobile responsive"]
+  },
   {
     name: "Doctor Appointment System",
     description:
-      "A web application for booking doctor appointments online. Users can select a doctor, book slots, and make payments.",
-    technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"],
+      "A comprehensive web application for booking doctor appointments online with integrated payment processing, patient management, and appointment scheduling system.",
+    technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Stripe API"],
     link: "https://appappointment-75586.web.app",
-    image: DoctorAppointment // Placeholder image
+    githubLink: "https://github.com/nikhilcse0427/doctor-appointment-system",
+    image: DoctorAppointment,
+    features: ["Online booking", "Payment integration", "Patient management", "Doctor profiles", "Appointment scheduling"]
   },
   {
     name: "DevSync-AI",
     description:
-      "A real-time AI developer chat application integrated with Gemini AI. Users can collaborate and get AI-powered coding suggestions.",
-    technologies: ["ReactJS", "MERN Stack", "Socket.IO", "Framer Motion"],
+      "A real-time AI-powered developer collaboration platform with integrated Gemini AI for coding assistance, team collaboration, and intelligent code suggestions.",
+    technologies: ["ReactJS", "MERN Stack", "Socket.IO", "Framer Motion", "OpenAI API", "WebRTC"],
     link: "https://github.com/nikhilcse0427/devsync-ai",
-    image: "https://www.saifety.ai/wp-content/uploads/2023/08/AI-Chatbot.jpg", // Placeholder image
+    githubLink: "https://github.com/nikhilcse0427/devsync-ai",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    features: ["AI coding assistance", "Real-time collaboration", "Code sharing", "Team management", "Version control"]
   },
+  {
+    name: "E-Commerce Platform",
+    description:
+      "A full-stack e-commerce solution with advanced features including inventory management, order processing, payment integration, and admin dashboard.",
+    technologies: ["ReactJS", "Node.js", "PostgreSQL", "Express.js", "Stripe", "Redux Toolkit"],
+    link: "https://github.com/nikhilcse0427/ecommerce-platform",
+    githubLink: "https://github.com/nikhilcse0427/ecommerce-platform",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+    features: ["Product catalog", "Shopping cart", "Payment processing", "Order management", "Admin dashboard"]
+  }
 ];
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gradient-to-r bg-black to-gray-900 text-white flex flex-col items-center py-10 px-6 md:px-20">
-        <h1 className="text-3xl font-bold text-center text-blue-500 pb-10">My Projects</h1>
-      {/* Project Cards */}
-      <div className="w-full max-w-5xl grid grid-cols-1 gap-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="p-6 bg-gray-900 rounded-lg shadow-lg border border-gray-700 flex flex-col md:flex-row items-center overflow-hidden transform hover:scale-105 transition duration-500"
-          >
-            {/* Left Side - Project Image */}
-            <div className="md:w-1/3 flex justify-center p-4">
-              <img
-                src={project.image}
-                alt={project.name}
-                className="rounded-lg shadow-md w-full h-auto object-cover border border-gray-600"
-              />
-            </div>
-            
-            {/* Right Side - Project Description */}
-            <div className="md:w-2/3 p-4 text-left">
-              <h2 className="text-2xl font-semibold text-green-400">{project.name}</h2>
-              <p className="text-gray-300 mt-2">{project.description}</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-blue-500 text-white text-sm rounded-lg shadow-md"
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
+      <div className="container mx-auto px-6 py-16">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+            Featured Projects
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Explore my portfolio of innovative web applications and solutions that showcase my expertise in full-stack development
+          </p>
+        </motion.div>
+
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 overflow-hidden hover:shadow-green-500/20 hover:border-green-500/50 transition-all duration-500"
+            >
+              {/* Project Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-green-500 hover:bg-green-600 rounded-full text-white transition-colors"
+                    title="Live Demo"
                   >
-                    {tech}
-                  </span>
-                ))}
+                    <FaExternalLinkAlt size={16} />
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-full text-white transition-colors"
+                    title="GitHub Repository"
+                  >
+                    <FaGithub size={16} />
+                  </a>
+                </div>
               </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-blue-400 hover:text-blue-500 transition-all text-lg font-semibold"
-              >
-                View Project <FaExternalLinkAlt className="ml-2" />
-              </a>
-            </div>
-          </motion.div>
-        ))}
+              
+              {/* Project Content */}
+              <div className="p-6">
+                <h2 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
+                  {project.name}
+                </h2>
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+                
+                {/* Features */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-green-400 mb-2 uppercase tracking-wide">Key Features</h3>
+                  <div className="flex flex-wrap gap-1">
+                    {project.features.slice(0, 3).map((feature, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full border border-gray-600"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                    {project.features.length > 3 && (
+                      <span className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full border border-gray-600">
+                        +{project.features.length - 3} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Technologies */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">Technologies</h3>
+                  <div className="flex flex-wrap gap-1">
+                    {project.technologies.slice(0, 4).map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-lg border border-blue-500/30"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-lg border border-blue-500/30">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-2 px-4 rounded-lg text-center transition-all duration-300 transform hover:scale-105 text-sm"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-all duration-300 transform hover:scale-105 text-sm"
+                  >
+                    Code
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <p className="text-xl text-gray-400 mb-8">
+            Interested in collaborating or have a project in mind?
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Let's Work Together
+          </a>
+        </motion.div>
       </div>
     </div>
   );
