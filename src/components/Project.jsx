@@ -19,7 +19,7 @@ const projects = [
       "A comprehensive web application for booking doctor appointments online with integrated payment processing, patient management, and appointment scheduling system.",
     technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Stripe API"],
     link: "https://appappointment-75586.web.app",
-    githubLink: "https://github.com/nikhilcse0427/doctor-appointment-system",
+    githubLink: "https://github.com/nikhilcse0427/DoctorAppointment",
     image: DoctorAppointment,
     features: ["Online booking", "Payment integration", "Patient management", "Doctor profiles", "Appointment scheduling"]
   },
