@@ -8,7 +8,7 @@ const projects = [
     description:
       "A comprehensive road safety management system with real-time traffic monitoring, accident reporting, emergency response coordination, and safety analytics dashboard for traffic authorities.",
     technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Socket.IO", "Mapbox API", "Tailwind CSS"],
-    link: "https://road-safety-guard.vercel.app/",
+    link: "https://road-safety-guard-rcxx.vercel.app/",
     githubLink: "https://github.com/nikhilcse0427/RoadSafety-Guard",
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     features: ["Real-time traffic monitoring", "Accident reporting system", "Emergency response", "Safety analytics", "Mobile responsive"]
