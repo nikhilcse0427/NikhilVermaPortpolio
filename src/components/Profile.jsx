@@ -26,28 +26,38 @@ export default function Profile() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    // Add class to body to prevent scrolling
+    document.body.classList.add('profile-page-active');
+
+    // Cleanup function to remove class when component unmounts
+    return () => {
+      document.body.classList.remove('profile-page-active');
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
-      <div className="container mx-auto px-6 py-16">
+    <div className="profile-page fixed top-0 left-0 w-full h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-hidden">
+      <div className="container mx-auto px-6 pt-24 h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
             My Profiles
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Connect with me on various platforms and explore my coding journey
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {/* GitHub Profile Box */}
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             whileHover={{ scale: 1.05, y: -10 }}
             className="group p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 flex flex-col items-center hover:shadow-green-500/20 hover:border-green-500/50 transition-all duration-500"
@@ -84,9 +94,9 @@ export default function Profile() {
           </motion.div>
 
           {/* LeetCode Profile Box */}
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             whileHover={{ scale: 1.05, y: -10 }}
             className="group p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 flex flex-col items-center hover:shadow-yellow-500/20 hover:border-yellow-500/50 transition-all duration-500"
@@ -123,9 +133,9 @@ export default function Profile() {
           </motion.div>
 
           {/* LinkedIn Profile Box */}
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ scale: 1.05, y: -10 }}
             className="group p-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 flex flex-col items-center hover:shadow-blue-500/20 hover:border-blue-500/50 transition-all duration-500"

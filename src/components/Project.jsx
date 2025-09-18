@@ -8,8 +8,8 @@ const projects = [
     description:
       "A comprehensive road safety management system with real-time traffic monitoring, accident reporting, emergency response coordination, and safety analytics dashboard for traffic authorities.",
     technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Socket.IO", "Mapbox API", "Tailwind CSS"],
-    link: "https://github.com/nikhilcse0427/road-safety-guard",
-    githubLink: "https://github.com/nikhilcse0427/road-safety-guard",
+    link: "https://road-safety-guard.vercel.app/",
+    githubLink: "https://github.com/nikhilcse0427/RoadSafety-Guard",
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     features: ["Real-time traffic monitoring", "Accident reporting system", "Emergency response", "Safety analytics", "Mobile responsive"]
   },
@@ -24,31 +24,21 @@ const projects = [
     features: ["Online booking", "Payment integration", "Patient management", "Doctor profiles", "Appointment scheduling"]
   },
   {
-    name: "DevSync-AI",
+    name: "Moto Mart",
     description:
-      "A real-time AI-powered developer collaboration platform with integrated Gemini AI for coding assistance, team collaboration, and intelligent code suggestions.",
-    technologies: ["ReactJS", "MERN Stack", "Socket.IO", "Framer Motion", "OpenAI API", "WebRTC"],
-    link: "https://github.com/nikhilcse0427/devsync-ai",
-    githubLink: "https://github.com/nikhilcse0427/devsync-ai",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    features: ["AI coding assistance", "Real-time collaboration", "Code sharing", "Team management", "Version control"]
-  },
-  {
-    name: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce solution with advanced features including inventory management, order processing, payment integration, and admin dashboard.",
-    technologies: ["ReactJS", "Node.js", "PostgreSQL", "Express.js", "Stripe", "Redux Toolkit"],
-    link: "https://github.com/nikhilcse0427/ecommerce-platform",
-    githubLink: "https://github.com/nikhilcse0427/ecommerce-platform",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-    features: ["Product catalog", "Shopping cart", "Payment processing", "Order management", "Admin dashboard"]
+      "A modern motorcycle dealership platform with inventory management, customer booking system, service scheduling, and integrated payment processing for motorcycle sales and maintenance.",
+    technologies: ["ReactJS", "Node.js", "MongoDB", "Express.js", "Tailwind CSS", "Stripe API", "Socket.IO"],
+    link: "https://github.com/nikhilcse0427/moto-mart",
+    githubLink: "https://github.com/nikhilcse0427/MotorMate",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    features: ["Motorcycle catalog", "Service booking", "Inventory management", "Customer portal", "Payment integration"]
   }
 ];
 
 export default function Projects() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 pt-24 pb-16">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -75,7 +65,7 @@ export default function Projects() {
               className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 overflow-hidden hover:shadow-green-500/20 hover:border-green-500/50 transition-all duration-500"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-32 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -103,18 +93,18 @@ export default function Projects() {
                   </a>
                 </div>
               </div>
-              
+
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-4">
                 <h2 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">
                   {project.name}
                 </h2>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-300 mb-3 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 {/* Features */}
-                <div className="mb-4">
+                <div className="mb-3">
                   <h3 className="text-xs font-semibold text-green-400 mb-2 uppercase tracking-wide">Key Features</h3>
                   <div className="flex flex-wrap gap-1">
                     {project.features.slice(0, 3).map((feature, i) => (
@@ -134,7 +124,7 @@ export default function Projects() {
                 </div>
 
                 {/* Technologies */}
-                <div className="mb-4">
+                <div className="mb-3">
                   <h3 className="text-xs font-semibold text-blue-400 mb-2 uppercase tracking-wide">Technologies</h3>
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.slice(0, 4).map((tech, i) => (
